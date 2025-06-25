@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Electronic Health Record</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>Patient Electronic Health Record</h1>
+    </header>
+
+    <nav>
+        <a href="#add-patient">Add Patient</a>
+        <a href="#view-record">View Record</a>
+    </nav>
+
+    <div class="container">
+        <!-- Add Patient -->
+        <div id="add-patient">
+            <h2>Add Patient Details</h2>
+            <div class="form-group">
+                <label for="patient-id">Patient ID:</label>
+                <input type="text" id="patient-id" placeholder="Enter Patient ID">
+            </div>
+            <div class="form-group">
+                <label for="patient-name">Full Name:</label>
+                <input type="text" id="patient-name" placeholder="Enter Full Name">
+            </div>
+            <div class="form-group">
+                <label for="patient-dob">Date of Birth:</label>
+                <input type="date" id="patient-dob">
+            </div>
+            <div class="form-group">
+                <label for="patient-gender">Gender:</label>
+                <select id="patient-gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="patient-contact">Contact Number:</label>
+                <input type="text" id="patient-contact" placeholder="Enter Contact Number">
+            </div>
+            <div class="form-group">
+                <label for="patient-history">Medical History (Chronic Conditions, Allergies, Surgeries):</label>
+                <textarea id="patient-history" placeholder="Enter Medical History"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="patient-medications">Current Medications:</label>
+                <textarea id="patient-medications" placeholder="Enter Current Medications"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="patient-appointments">Appointment Date:</label>
+                <input type="date" id="patient-appointments">
+            </div>
+            <div class="form-group">
+                <label for="assign-doctor">Assign Doctor:</label>
+                <select id="assign-doctor">
+                    <option value="Dr. Balram Bhargava- Cardiologist">Dr. Balram Bhargava - Cardiologist</option>
+                    <option value="Dr. Achal Srivastava - Neurologist">Dr. Achal Srivastava - Neurologist</option>
+                    <option value="Dr. G.K. Rath - Oncology">Dr. G.K. Rath - Oncology</option>
+                    <option value="Dr. Vivek Trikha - Orthopedic">Dr. Vivek Trikha - Orthopedic</option>
+                    <option value="Dr. Anoop Saraya - Gastroenterology">Dr. Anoop Saraya - Gastroenterology</option>
+                    <option value="Dr. Naveet Wig - Psychiatry">Dr. Naveet Wig - Psychiatry</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <button onclick="addPatient()">Add Patient</button>
+            </div>
+        </div>
+
+        <!-- View Patient  -->
+        <div id="view-record">
+            <h2>View Patient Record</h2>
+            <div class="form-group">
+                <label for="search-id">Enter Patient ID:</label>
+                <input type="text" id="search-id" placeholder="Enter Patient ID">
+            </div>
+            <div class="form-group">
+                <button onclick="viewPatient()">Search</button>
+            </div>
+
+            <div id="patient-record" style="display: none;">
+                <h3>Patient Record</h3>
+                <p id="record-name"></p>
+                <p id="record-dob"></p>
+                <p id="record-gender"></p>
+                <p id="record-contact"></p>
+                <p id="record-history"></p>
+                <p id="record-medications"></p>
+                <p id="record-appointments"></p>
+                <p id="record-doctor"></p>
+                <p id="record-blockchain-id"></p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Blockchain EHR System</p>
+    </footer>
+
+    <script src="script.js"></script> 
+</body>
+</html>
